@@ -1,0 +1,12 @@
+{
+  "name": "bookstore",
+  "version": "1.0.0",
+  "description": "Book Store Api",
+  "main": "server.js",
+  "author": "rajatdhoot123@gmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.2"
+  },
+  "devDependencies": {}
+}
