@@ -1,12 +1,8 @@
-const express = require('express');
-const app = express()
+const http = require('http');
+const app = require('./app');
 
-const PORT = 3000;
+const PORT = process.env.PORT || 5050;
 
-const books = require('./api/routes/books')
+const server = http.createServer(app);
 
-app.use('/books', books)
-
-app.get('/',(req,res) => res.send("Page server from /"))
-
-app.listen(PORT,() => console.log(`Server is Listening on Port ${PORT}`))
+server.listen(PORT, () => console.log(`Server is Listening on Port ${PORT}`));
