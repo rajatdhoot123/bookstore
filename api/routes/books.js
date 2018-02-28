@@ -5,9 +5,9 @@ const book = require('../controller/books')
 
 router.use((req,res,next) => console.log(Date.now()) || next());
 
-router.get('/', book.populateDatabase)
+router.post('/', book.populateDatabase)
 
-router.post('/', book.insertBookDetail)
+router.get('/', book.getAllBooks)
 
 
 module.exports = router;
