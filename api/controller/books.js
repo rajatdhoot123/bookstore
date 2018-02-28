@@ -43,7 +43,16 @@ exports.getAllBooks = (req,res) => {
 }
 
 exports.search = (req,res) => {
-    sql = `select * from book_info where ${req.query.key} = '${req.query.value}'`
+    sql = `select * from book_info where ${req.query.key} LIKE '%${req.query.value}%'`
+    connection.query(sql, (error, results, fields) => {
+        //connection.end();
+        if (error) return res.json({ error: error });
+        return res.json({ result: results });
+    });
+}
+
+exports.deleteBook = (req,res) => {
+    sql = `DELETE from book_info where ${req.query.key} = '${req.query.value}'`
     connection.query(sql, (error, results, fields) => {
         //connection.end();
         if (error) return res.json({ error: error });

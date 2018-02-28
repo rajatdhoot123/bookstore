@@ -7,9 +7,11 @@ router.use((req,res,next) => console.log(Date.now()) || next());
 
 router.post('/', book.populateDatabase)
 
-router.get('/', book.getAllBooks)
+router.get('/sort', book.getAllBooks)
 
 router.get('/search', book.search)
+
+router.delete('/delete', book.deleteBook)
 
 
 module.exports = router;
