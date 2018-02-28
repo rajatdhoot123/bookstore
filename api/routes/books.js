@@ -9,5 +9,7 @@ router.post('/', book.populateDatabase)
 
 router.get('/', book.getAllBooks)
 
+router.get('/search', book.search)
+
 
 module.exports = router;
